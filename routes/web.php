@@ -22,19 +22,19 @@ Route::controller(ListingController::class)->group(function() {
     Route::get('/manage', 'manage')->name('manage');
 });
 
-// register
+// register (auth)
 Route::controller(RegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
     Route::post('/register', 'store')->name('register.store');
 });
 
-// login
+// login (auth)
 Route::controller(LoginController::class)->group(function() {
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'store')->name('login.store');
 });
 
-// logout
+// logout (auth)
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 // search
